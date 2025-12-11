@@ -1,0 +1,198 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Free Fire — 6th Anniversary</title>
+  <meta name="description" content="Celebrate 6 years of Free Fire! Events, rewards, gallery and more.">
+  <style>
+    :root{
+      --bg1:#0f172a;
+      --accent:#ffcc00;
+      --muted:#94a3b8;
+      --card:#0b1220;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:linear-gradient(180deg,var(--bg1) 0%, #071022 100%);color:#e6eef8;line-height:1.45}
+    header{padding:48px 20px;text-align:center}
+    .logo{font-weight:800;font-size:28px;letter-spacing:1px;color:var(--accent)}
+    h1{font-size:clamp(28px,6vw,48px);margin:8px 0}
+    p.lead{color:var(--muted);max-width:780px;margin:0 auto}.hero{display:grid;grid-template-columns:1fr;gap:24px;align-items:center;padding:30px 20px}
+.hero-grid{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:16px;padding:18px;box-shadow:0 6px 18px rgba(2,6,23,0.6);min-width:260px}
+
+.cta-row{display:flex;gap:12px;justify-content:center;margin-top:10px}
+.btn{background:transparent;border:2px solid rgba(255,204,0,0.18);padding:10px 16px;border-radius:12px;color:var(--accent);cursor:pointer;font-weight:600}
+.btn.primary{background:linear-gradient(90deg,#ffb84d,#ffd95c);color:#071022;border:none}
+
+.badges{display:flex;gap:10px;justify-content:center;margin-top:10px}
+.badge{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:999px;font-size:13px;color:var(--muted)}
+
+main{padding:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+
+.features{margin-top:18px}
+.feature{display:flex;gap:12px;align-items:flex-start}
+.feature .icon{width:44px;height:44px;border-radius:10px;background:linear-gradient(180deg,#1f2937,#0b1220);display:flex;align-items:center;justify-content:center;font-weight:700}
+
+.timeline{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px}
+.timeline-item{padding:10px 0;border-bottom:1px dashed rgba(255,255,255,0.03)}
+.timeline-item:last-child{border-bottom:none}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.thumb{background:linear-gradient(180deg,#081126,#07202b);height:120px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px}
+
+footer{padding:20px;text-align:center;color:var(--muted);font-size:13px}
+
+/* Confetti canvas full screen but pointer-events none */
+canvas#confetti{position:fixed;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:40}
+
+/* responsive */
+@media(min-width:880px){
+  .hero{grid-template-columns:1fr 420px}
+  .hero .card{min-width:340px}
+}
+
+  </style>
+</head>
+<body>
+  <canvas id="confetti"></canvas>
+  <header>
+    <div class="logo">FREE FIRE</div>
+    <h1>6th Anniversary — Battle. Survive. Celebrate.</h1>
+    <p class="lead">Six years of adrenaline, skins, and memorable drops. Join the anniversary events, claim exclusive rewards, and relive the best moments from the battlefield.</p>
+    <div class="badges" aria-hidden>
+      <div class="badge">6th Anniversary • 2019 — 2025</div>
+      <div class="badge">Limited-time events</div>
+      <div class="badge">Exclusive Rewards</div>
+    </div>
+  </header>  <section class="hero">
+    <div class="hero-left">
+      <div class="card">
+        <h2 style="margin:0 0 8px">What's live now</h2>
+        <p style="margin:0;color:var(--muted)">Anniversary Royale: Play the special mode to earn tokens. Daily login rewards include anniversary crates and a free epic skin.</p>
+        <div class="cta-row">
+          <button class="btn primary" onclick="openLink()">Play Now</button>
+          <button class="btn" onclick="openLink('events')">View Events</button>
+        </div>
+      </div><div class="features" style="margin-top:12px">
+    <div class="grid">
+      <div class="card feature">
+        <div class="icon">🎁</div>
+        <div>
+          <strong>Daily Rewards</strong>
+          <div style="color:var(--muted);font-size:14px">Login each day for a 6-day reward streak — exclusive emotes and skins.</div>
+        </div>
+      </div>
+
+      <div class="card feature">
+        <div class="icon">🏆</div>
+        <div>
+          <strong>Anniversary Tournaments</strong>
+          <div style="color:var(--muted);font-size:14px">Compete with friends for top leaderboard prizes and cash rewards.</div>
+        </div>
+      </div>
+
+      <div class="card feature">
+        <div class="icon">🛠️</div>
+        <div>
+          <strong>Limited Bundles</strong>
+          <div style="color:var(--muted);font-size:14px">Grab anniversary-only bundles with rare weapon skins and character outfits.</div>
+        </div>
+      </div>
+
+      <div class="card feature">
+        <div class="icon">📸</div>
+        <div>
+          <strong>Community Gallery</strong>
+          <div style="color:var(--muted);font-size:14px">Share clips and screenshots — the best will be featured in-game and here.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<aside class="hero-right">
+  <div class="card" style="text-align:center">
+    <h3 style="margin:6px 0">Anniversary Pass</h3>
+    <p style="color:var(--muted);margin:0 0 10px">Unlock extra challenges and a guaranteed epic on level 40.</p>
+    <div style="display:flex;gap:10px;justify-content:center;margin-top:10px">
+      <button class="btn">View Pass</button>
+      <button class="btn">Redeem Code</button>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <h4 style="margin:0 0 8px">Timeline</h4>
+    <div class="timeline">
+      <div class="timeline-item"><strong>2019:</strong> Free Fire launches globally.</div>
+      <div class="timeline-item"><strong>2020:</strong> First anniversary events & community tournaments.</div>
+      <div class="timeline-item"><strong>2022:</strong> Big crossovers and new official esports league.</div>
+      <div class="timeline-item"><strong>2025:</strong> 6th Anniversary — new modes & celebration rewards.</div>
+    </div>
+  </div>
+</aside>
+
+  </section>  <main>
+    <section class="card" style="margin-bottom:16px">
+      <h3 style="margin:0 0 10px">Gallery — Community Picks</h3>
+      <div class="gallery">
+        <div class="thumb">Upload your screenshot</div>
+        <div class="thumb">Epic skin showcase</div>
+        <div class="thumb">Top plays clip</div>
+        <div class="thumb">Cosplay highlight</div>
+      </div>
+    </section><section class="card" style="margin-bottom:16px">
+  <h3 style="margin:0 0 10px">How to join</h3>
+  <ol style="margin:0;padding-left:18px;color:var(--muted)">
+    <li>Open Free Fire on your device (Android / iOS / PC via emulator).</li>
+    <li>Visit the Anniversary hub from the main menu.</li>
+    <li>Complete daily missions to collect anniversary tokens.</li>
+    <li>Redeem tokens at the Anniversary Shop for exclusive items.</li>
+  </ol>
+</section>
+
+<section class="card">
+  <h3 style="margin:0 0 10px">Stay updated</h3>
+  <form onsubmit="event.preventDefault();subscribe()" style="display:flex;gap:8px;flex-wrap:wrap">
+    <input id="email" type="email" placeholder="Your email" required style="flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+    <button class="btn primary" type="submit">Subscribe</button>
+  </form>
+  <div id="sub-msg" style="margin-top:8px;color:var(--muted);font-size:13px"></div>
+</section>
+
+  </main>  <footer>
+    Made with ❤️ for the Free Fire community — 6th Anniversary. <br>
+    <small>Replace placeholder images and links with the official assets before publishing.</small>
+  </footer>  <script>
+    function openLink(section){
+      // placeholder: replace with actual links or in-app routing
+      alert('This button would open the game or navigate to the ' + (section||'play') + ' page. Replace openLink() with your real link.');
+    }
+
+    function subscribe(){
+      const email = document.getElementById('email').value;
+      document.getElementById('sub-msg').textContent = `Thanks! ${email} subscribed for anniversary updates.`;
+      document.getElementById('email').value = '';
+    }
+
+    /* Simple confetti effect (lightweight) */
+    (function(){
+      const canvas = document.getElementById('confetti');
+      const ctx = canvas.getContext('2d');
+      let W = canvas.width = window.innerWidth;
+      let H = canvas.height = window.innerHeight;
+      window.addEventListener('resize', ()=>{W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight});
+
+      function rand(min,max){return Math.random()*(max-min)+min}
+      const pieces = [];
+      function spawn(n){for(let i=0;i<n;i++){pieces.push({x:rand(0,W),y:rand(-H,0),r:rand(4,10),d:rand(1,3),tilt:rand(-0.1,0.1)})}}
+      spawn(120);
+
+      function draw(){ctx.clearRect(0,0,W,H);for(let p of pieces){ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.tilt);ctx.fillStyle = 'rgba(255,204,0,0.95)';ctx.fillRect(-p.r/2,-p.r/2,p.r,p.r);ctx.restore();p.x += Math.sin(p.d)+0.5; p.y += 2+p.d; p.tilt += 0.01; if(p.y>H+20){p.x=rand(0,W);p.y=-10;}}requestAnimationFrame(draw)}
+      draw();
+    })();
+  </script></body>
+</html>
